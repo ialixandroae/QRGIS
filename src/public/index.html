@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>QR GIS System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- In the head -->
+    <link href="https://fonts.googleapis.com/css?family=BenchNine:700|Dosis:400,600&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/css/calcite-web.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <script type="text/javascript" src="./index.js"></script>
+</head>
+<body>
+    
+    <header class="top-nav fade-in">
+        <div class="grid-container">
+            <div class="column-24">
+                <div class="tablet-hide">
+                    <img src="./qrlogo.png" style="height:50px; position: absolute; bottom: 0.5rem;">
+                    <a href="#" class="top-nav-title margin-left-4 image-clip"><span id="nodejs_title image-clip"></span> QR GIS System</a>
+                    <nav class="top-nav-list" role="navigation" aria-labelledby="topnav">
+                    </nav>   
+                </div>
+
+                <nav class="class-top-nav-list right" role="navigation" aria-labelledby="usernav">
+                    <a class="top-nav-link icon-ui-collection margin-left-1" id="see_all_apps">All apps</a>
+                    <a class="top-nav-link icon-ui-menu margin-left-1 js-modal-toggle" data-modal="info" href="#" style="color: #fefefe">More Info</a>
+                    
+                    <div class="js-modal modal-overlay modifier-class" data-modal="info">
+                        <div class="modal-content column-12" role="dialog" aria-labelledby="modal" role="dialog">
+                    
+                            <a class="js-modal-toggle right" href="#" aria-label="close-modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32" class="svg-icon">
+                                    <path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"
+                                    />
+                                </svg>
+                            </a>
+                    
+                            <h3 class='trailer-half' style="text-align: center">QR GIS System</h3>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>Web application created to provide a four-steps method to build an endless number of GIS webapps with customized title, location, basemap and theme color, accessible through a QR code uniquely generated</p>
+                            
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>The app uses NodeJS and ExpressJS for API, routes creation and server-side processing and Calcite Web for front-end.</p>
+                            
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>GIS capabilities and web maps are available through ArcGIS API for JavaScript.</p>
+                            
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon">
+                                <path fill="#5a9359" d="M11.927 22l-6.882-6.883-3 3L11.927 28 31.204 8.728l-3.001-3.001z" />
+                            </svg>Each GIS webapp created is hosted on the machine where the main app (project) is deployed.</p>
+                    
+                            <div class="text-right">
+                                <button class="btn js-modal-toggle">Got it</button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+    
+                <div class="tablet-show top-nav-flex">
+                    <header class="top-nav-flex-title">
+                        <a href="/" class="top-nav-link"><span id="nodejs_title">QR</span> GIS System
+                        </a>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid-container" style="margin-top: 1rem;">
+        <div class="column-24 main">
+            <h2 class="text-center">Generate a WebGIS app by completing the form below and access it by scaning the QR code</h2>
+            <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon"><path d="M27.029 1.858l-1.414 1.414-4.243-1.414-7.071 7.071v2.828l7.778-7.778 2.121.707L5.815 23.071l4.243 4.243L31.271 6.101zM2.304 30.873l6.34-2.145-4.243-4.243z"/></svg>
+                 Title of the map/app
+                <input type="text" class="modifier-class" id="projectTitle" required>
+            </label>
+
+            <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon"><path d="M15.999 0C11.214 0 8 1.805 8 6.5v17l7.999 8.5L24 23.5v-17C24 1.805 20.786 0 15.999 0zM16 14.402A4.4 4.4 0 0 1 11.601 10a4.4 4.4 0 1 1 8.798 0A4.4 4.4 0 0 1 16 14.402z"/></svg>
+                 Location
+                <input type="text" class="modifier-class" id="projectLocation" required>
+            </label>
+
+            <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon"><path d="M0 0v14h13.99V0H0zm11.99 11.92V12H7.16c.471-.879 1.043-2.027 1.676-2.792.789 1.11 1.676 2.053 3.154 2.712zM5.951 2.336c.119.233.234.475.311.754.361 1.308.857 3.078 1.738 4.752C7.021 8.943 6.15 10.401 5.504 12H1.99V6.225c2.49-.862 3.445-2.79 3.961-3.889zM31.99 0H18v14h13.99V0zm-5.73 12c.01-.25.037-.561.084-.805.029-.761.309-1.917.752-2.108.242-.106.461-.163.644-.214.412-.111.877-.239 1.137-.714.266-.486.143-1.063-.053-1.684.088-.142.445-.284 1.166-.345v5.869h-3.73zm3.73-7.397c-.848.051-1.834.245-2.373.964-.301.402-.377.909-.215 1.429.055.173.084.294.1.376-.053.016-.111.031-.16.045a6.036 6.036 0 0 0-.846.284c-1.486.643-1.646 2.978-1.648 3.311-.033.161-.105.432-.102.989h-2.045c.096-.496.098-.65.08-.83.059-.568.252-3.403-1.559-4.344a2.35 2.35 0 0 1 .383-.109c2.705-.127 3.348-2.492 3.57-3.697.102-.549.672-.849 1.262-1.02h3.553v2.603zm2 13.397H18v14h13.99V18zm-10.084 8.633L23.599 30H19.99V20h.338l4.371 2.661-2.691 3.142a.754.754 0 0 0-.102.83zM23.234 20h6.756v4.113L23.234 20zM0 18v14h13.99V18H0zm11.715 3.108a2.161 2.161 0 0 1-1.689 1.367c-1.225.204-1.838 1.017-2.068 1.849-1.502-.482-2.896-.236-3.859.721-1.141 1.139-1.377 3.014-.57 4.562.045.086.096.253.133.393h-1.67V20h10.01v.127c-.365.515-.27.933-.285.981z"/></svg>
+                Basemap
+                <select class="select-full" id="projectBasemap">
+                    <option value="">Streets</option>
+                    <option value="">Satellite</option>
+                    <option value="">Hybrid</option>
+                    <option value="">Topo</option>
+                    <option value="">Gray</option>
+                    <option value="">Dark-Gray</option>
+                    <option value="">Oceans</option>
+                    <option value="">National-Geographic</option>
+                    <option value="">Terrain</option>
+                    <option value="">OSM</option>
+                    <option value="">Dark-Gray-Vector</option>
+                    <option value="">Gray-Vector</option>
+                    <option value="">Streets-Vector</option>
+                    <option value="">Topo-Vector</option>
+                    <option value="">Streets-Night-Vector</option>
+                    <option value="">Streets-Relief-Vector</option>
+                    <option value="">Streets-Navigation-Vector</option>
+                </select>
+            </label>
+
+            <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon"><path d="M16.047 22.746c-3.693 0-6.699-3.006-6.699-6.699s3.006-6.699 6.699-6.699 6.699 3.006 6.699 6.699-3.006 6.699-6.699 6.699zm0-17c1.094 0 2.127.219 3.117.535L16.047.047 12.93 6.281c.99-.316 2.024-.535 3.117-.535zm9.109 5.598l2.205-6.611-6.611 2.205a10.298 10.298 0 0 1 4.406 4.406zM11.344 6.937L4.735 4.732l2.203 6.611a10.292 10.292 0 0 1 4.406-4.406zm20.703 9.11l-6.234-3.117c.316.99.535 2.024.535 3.117s-.219 2.127-.535 3.117l6.234-3.117zm-26.301 0c0-1.094.219-2.127.535-3.117L.047 16.047l6.234 3.117c-.316-.99-.535-2.023-.535-3.117zm15.004 9.109l6.611 2.205-2.205-6.611a10.292 10.292 0 0 1-4.406 4.406zM6.938 20.75l-2.203 6.611 6.609-2.205a10.292 10.292 0 0 1-4.406-4.406zm9.109 5.598c-1.094 0-2.127-.219-3.117-.535l3.117 6.234 3.117-6.234c-.99.317-2.023.535-3.117.535z"/></svg>
+                App color
+                <select class="select-full" id="projectAppColor">
+                    <option value="">Black</option>
+                    <option value="">White</option>
+                </select>
+            </label>
+            
+            <button class="btn btn-fill" id="btnCreateApp" disabled> Create app </button>
+        
+            <div id="qrcode" style="display: none;">
+              <div class="column-24 padding-leader-2">
+                <div class="block-group block-group-3-up tablet-block-group-2-up phone-block-group-1-up">
+                  <div class="card block trailer-3" style="margin: auto;">
+                    <figure class="card-image-wrap">
+                      <img class="card-image card-qr" src="">
+                    </figure>
+                    <div class="card-content">
+                      <h4><a href="" target="_blank" id="app_title"></a></h4>
+                      <a href="" target="_blank" class="btn view-app btn-fill leader-1">View Application</a>
+                    </div>
+                  </div>
+              </div>
+            </div>    
+        </div>
+    </div>
+
+
+    <div class="column-24 second" style="display: none;">
+        <div class="column-8">
+            <button class="btn btn-clear back-to-main"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="svg-icon"><path d="M31.047 28h-5l-12-12 12-12h5l-12 12 12 12zm-26-12l12-12h-5l-12 12 12 12h5l-12-12z"/></svg>Main page</button>
+        </div>
+        <div class="column-24 padding-leader-1 card-apps">
+           
+        </div>
+        
+    </div> 
+
+    <footer class="footer leader-3" id="footer">
+        <div class="grid-container">
+            <nav class="column-8">
+                <h6 class="font-size-1">
+                    <strong>#geodev</strong>
+                </h6>
+    
+                <p class="leader-1 font-size--2">
+                    <strong>Follow Me</strong>
+                    </span>
+                </p>
+                <section class="footer-social-nav">
+                    <a class="icon-social-twitter" href="https://twitter.com/ialixandroae" target="_blank"></a>
+                    <a class="icon-social-github" href="https://github.com/ialixandroae" target="_blank"></a>
+                    <a class="icon-social-linkedin" href="https://www.linkedin.com/in/ialixandroae/" target="_blank"></a>
+                </section>
+            </nav>
+    
+            <nav class="column-4 leader-1">
+                <h6 class="font-size--2">
+                    <strong>Project resources
+                    </strong>
+                </h6>
+                <ul class="list-plain font-size--2">
+                    <li>
+                        <a class="link-off-black" href="https://nodejs.org/en/" target="_blank">NodeJS</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="https://expressjs.com/"
+                            target="_blank">ExpressJS</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="http://esri.github.io/calcite-web/" target="_blank">Calcite Web</a>
+                    </li>
+                    <li>
+                        <a class="link-off-black" href="https://github.com/ialixandroae/QRGIS" target="_blank">Project on GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </footer>
+
+    <!-- Just before end of body -->
+    <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/js/calcite-web.min.js"></script>
+    <script>
+        calcite.init()
+    </script>
+    
+</body>
+</html>

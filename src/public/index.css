@@ -1,0 +1,68 @@
+.top-nav {
+    background: linear-gradient(to right,#08a091, #40E0D0) !important; 
+}
+
+.top-nav-title,
+.top-nav-link {
+    color: #fefefe;
+}
+
+.top-nav-title:hover,
+.top-nav-link:hover {
+    color: #fefefe;
+}
+
+a.top-nav-link:hover,
+a.top-nav-link:focus {
+    border-bottom-color: #aaf0d1;
+}
+
+.footer {
+    padding-top: 2rem;
+}
+
+.leader-3 {
+    margin-top: 0;
+}
+
+.svg-icon {
+    color: #08a091;
+}
+
+#btnCreateApp,
+.btn.js-modal-toggle,
+.view-app {
+    background-color: #08a091; 
+    border: 1px solid #aaf0d1;
+}
+
+.view-app:hover {
+    background-color: white; 
+    color: #08a091;
+}
+
+.card.card-wide {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.card-wide-image-wrap {
+    width: 15%;
+}
+
+.image-clip {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height:1;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROjFhujj2XCnqp-QocPwgPZG7QcrFjrHYjb2EGobeRWXmNLA8D1g&s) repeat center;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+  }
